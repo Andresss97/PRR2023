@@ -23,6 +23,20 @@ public class Server {
         System.out.println("Esperando cliente:");
         this.cliente = this.socket.accept();
         System.out.println("Se ha conectado con éxito");
+        
+        this.input = new DataInputStream(this.cliente.getInputStream());
+        this.output
     }
+    
+    
+   
+    
+    public String listen(){
+    String s;
+    
+    s = "";
+    
+    return s;
+    } 
     
 }

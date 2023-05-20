@@ -9,17 +9,14 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author super
- */
 public class Cliente {
 
+    private static Client client;
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Client client = new Client();
+        client = new Client();
         
         try {
             client.connect();
