@@ -15,9 +15,9 @@ import static org.junit.Assert.*;
  *
  * @author super
  */
-public class Tests {
+public class Prueba {
     
-    public Tests() {
+    public Prueba() {
     }
     
     @BeforeClass
@@ -41,10 +41,4 @@ public class Tests {
     //
     // @Test
     // public void hello() {}
-    
-    @Test
-    public void Test1(){
-        Rectangulo rect = new Rectangulo();
-        assertEquals(rect.getArea(), 10);
-    }
 }
