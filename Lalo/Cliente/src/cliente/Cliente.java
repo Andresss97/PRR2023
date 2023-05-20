@@ -20,6 +20,8 @@ public class Cliente {
         
         try {
             client.connect();
+            String data = client.listen();
+            System.out.println(data);
         } catch (IOException ex) {
             Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
         }

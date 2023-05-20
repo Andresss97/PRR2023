@@ -25,7 +25,9 @@ public class Server {
         System.out.println("Se ha conectado con éxito");
         
         this.input = new DataInputStream(this.cliente.getInputStream());
-        this.output
+        this.output = new DataOutputStream(this.cliente.getOutputStream());
+        
+        this.output.writeUTF("Hola estas conectado");
     }
     
     
