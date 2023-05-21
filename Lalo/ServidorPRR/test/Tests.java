@@ -53,6 +53,15 @@ public class Tests {
     assertTrue(client.isRunning());
     
     }
+    
+    @Test
+    public void Test3(){
+    //Comprobamos cierre del Server
+    Server server = new Server();
+    assertTrue(server.serverclosed());
+    
+    
+    }
 
 
     // TODO add test methods here.
