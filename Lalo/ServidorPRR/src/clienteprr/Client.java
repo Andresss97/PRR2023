@@ -9,6 +9,8 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -18,7 +20,23 @@ public class Client {
     private Socket socket;
     private DataInputStream input;
     private DataOutputStream output;
+    private boolean abierto;
     
+    public Client(){
+        try {
+            this.socket = new Socket("localhost", 5050);
+            abierto = false;
+        } catch (IOException ex) {
+            Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    
+    
+    
+    }
+    public boolean isRunning(){
+    return abierto;
+    }
     public void connect() throws IOException{
     this.socket = new Socket("localhost", 5050);
         System.out.println("Se ha conectado con éxito");
