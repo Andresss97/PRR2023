@@ -19,23 +19,36 @@ public class Server {
     private DataOutputStream output;
     private Socket cliente;
     private Boolean abierto;
-    public Server(){
+    
+ public Server(){
         
         try {
-            this.socket = new ServerSocket(5050);
+            this.socket = new ServerSocket(6000);
             abierto = true;
-            //this.cliente = this.socket.accept();
+           // this.cliente = this.socket.accept();
         } catch (IOException ex) {
-            Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
         }
     
     }
-    
+   public boolean serverClosed(){
+       
+        try {
+            this.socket.close();
+            return true;
+        } catch (IOException ex) {
+            return false;
+        }
+       
+   
+   
+   }
     public boolean abierto(){  //Para el test1
   
     return abierto;
     
     }
+    
     public void connect() throws IOException{
     
         //this.socket = new ServerSocket(5050);

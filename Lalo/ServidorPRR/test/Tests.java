@@ -12,6 +12,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import servidorprr.Server;
 import clienteprr.Client;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -55,10 +58,26 @@ public class Tests {
     }
     
     @Test
-    public void Test3(){
-    //Comprobamos cierre del Server
+    public void test3(){
+        Server server = new Server();
+        try {
+            boolean expected = true;
+            assertEquals(expected, server.serverClosed());
+        }
+        catch(Exception ex){
+            
+        }
+    }
+    @Test
+    public void checkconnection(){
     Server server = new Server();
-    assertTrue(server.serverclosed());
+    Client cliente = new Client();
+        try {
+            cliente.connect();
+        } catch (IOException ex) {
+            System.out.println("Ups, no pude conectarme");;
+        }
+    
     
     
     }

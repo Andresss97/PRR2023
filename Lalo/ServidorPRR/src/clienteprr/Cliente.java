@@ -16,7 +16,7 @@ public class Cliente {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        client = new Client();
+      /*  client = new Client();
         
         try {
             client.connect();
@@ -25,7 +25,7 @@ public class Cliente {
         } catch (IOException ex) {
             Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+     */   
     }
     
 }

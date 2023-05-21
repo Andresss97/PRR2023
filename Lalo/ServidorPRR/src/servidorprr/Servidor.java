@@ -16,12 +16,12 @@ import java.util.logging.Logger;
 public class Servidor {
 
     public static void main(String[] args) {
-        Server server = new Server();
+        /*Server server = new Server();
         try {
-            server.connect();
+           /server.connect();
         } catch (IOException ex) {
             Logger.getLogger(Servidor.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }*/
     }
     
 }
