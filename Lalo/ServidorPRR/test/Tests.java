@@ -10,6 +10,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import servidorprr.Server;
+import clienteprr.Client;
 
 /**
  *
@@ -35,12 +37,27 @@ public class Tests {
     @After
     public void tearDown() {
     }
+
     
     @Test
     public void Test1(){
     Server server = new Server();
-    boolean abierto = true;
-        assertEquals(server.startServer(), abierto);
-        
+    
+        assertTrue(server.abierto());
+    
+    
     }
+    @Test
+    public void Test2(){
+    Client client = new Client();
+    assertTrue(client.isRunning());
+    
+    }
+
+
+    // TODO add test methods here.
+    // The methods must be annotated with annotation @Test. For example:
+    //
+    // @Test
+    // public void hello() {}
 }

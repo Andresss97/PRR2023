@@ -5,6 +5,8 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -16,18 +18,36 @@ public class Server {
     private DataInputStream input;
     private DataOutputStream output;
     private Socket cliente;
+    private Boolean abierto;
+    public Server(){
+        
+        try {
+            this.socket = new ServerSocket(5050);
+            abierto = true;
+            //this.cliente = this.socket.accept();
+        } catch (IOException ex) {
+            Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
+        }
     
+    }
+    
+    public boolean abierto(){  //Para el test1
+  
+    return abierto;
+    
+    }
     public void connect() throws IOException{
     
-        this.socket = new ServerSocket(5050);
+        //this.socket = new ServerSocket(5050);
         System.out.println("Esperando cliente:");
-        this.cliente = this.socket.accept();
+        //this.cliente = this.socket.accept();
         System.out.println("Se ha conectado con éxito");
         
         this.input = new DataInputStream(this.cliente.getInputStream());
         this.output = new DataOutputStream(this.cliente.getOutputStream());
         
         this.output.writeUTF("Hola estas conectado");
+       
     }
     
     
