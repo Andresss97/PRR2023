@@ -5,20 +5,32 @@
  */
 package cliente_3;
 
+import java.awt.BorderLayout;
 import java.net.Socket;
+import java.util.Scanner;
 
 /**
  *
  * @author super
  */
-public class Cliente_2 {
+public class Cliente_3 {
     
     
     public static void main(String[] args) {
         //_ TODO code application logic here
    Client client = new Client();
    client.connect();
+   Scanner scan = new Scanner(System.in);
+   while(true) {
+       System.out.println("Introduzca una frase:");
+       String data = scan.nextLine();
+       
+       client.sendData(data);
+       System.out.println(client.receiveData());
+   }
     
+    
+        
     }
     
 }

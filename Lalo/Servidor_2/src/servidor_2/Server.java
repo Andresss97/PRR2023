@@ -48,8 +48,10 @@ public class Server {
     
     public void acceptClient(){
         try {   
+            //**
             this.socket = this.serverSocket.accept();
             System.out.println("Cliente aceptado");
+            
         } catch (IOException ex) {
             System.out.println("Unable to accept the client socket");;
         }

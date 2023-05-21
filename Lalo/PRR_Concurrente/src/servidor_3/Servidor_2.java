@@ -19,6 +19,7 @@ public class Servidor_2 {
         Server server = new Server(5051);
         server.acceptClient();
         
+        
     }
     
 }

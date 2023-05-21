@@ -25,6 +25,11 @@ public class Server {
     public Server(int port){
         try {
             this.serverSocket = new ServerSocket(port);
+            //Si no es concurrente solo hace falta esto dentro del try catch
+            //this.socket = this.serverSocket.accept();
+            //System.out.println("Cliente aceptado");
+            //**
+           
         } catch (IOException ex) {
             System.out.println("Unable to create the socket");
         }
@@ -47,12 +52,17 @@ public class Server {
     }
     
     public void acceptClient(){
-        try {   
+        while(!this.serverSocket.isClosed()){
+              try {
+            System.out.println("Esperando a que se conecte un cliente...");
             this.socket = this.serverSocket.accept();
             System.out.println("Cliente aceptado");
+            new Thread(new ClientHandler(this.socket,this)).start();
+            
         } catch (IOException ex) {
             System.out.println("Unable to accept the client socket");;
         }
+    }
     }
     
     public int contarRecibidas(String frase){
