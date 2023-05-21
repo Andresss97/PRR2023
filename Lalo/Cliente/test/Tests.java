@@ -44,7 +44,9 @@ public class Tests {
     
     @Test
     public void Test1(){
-        Rectangulo rect = new Rectangulo();
-        assertEquals(rect.getArea(), 10);
+    Server server = new Server();
+    boolean abierto = true;
+        assertEquals(server.startServer(), abierto);
+        
     }
 }
